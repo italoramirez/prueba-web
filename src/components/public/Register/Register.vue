@@ -9,9 +9,13 @@ import {useFetch} from "@vueuse/core";
 import {notify} from "notiwind";
 import {ALERT_TYPES} from "@/constants/AlertTypes"
 
-import router from "@/router";
+const authStore = useAuthStore()
+const router = useRouter()
+
 import {useForm} from "vee-validate";
 import * as yup from "yup";
+import {useAuthStore} from "@/stores/auth.store";
+import {useRouter} from "vue-router";
 
 
 const departmentOptions = ref([
@@ -76,9 +80,9 @@ const model = reactive<initialState>({
 //
 const save = async () => {
   try {
-    const { response } = await useFetch(`${REGISTER_URL}`).post(model).json()
+    const { response, data } = await useFetch(`${REGISTER_URL}`).post(model).json()
     if (response.value?.ok) {
-      await router.push('users')
+      authStore.login(data , router)
       notify({
         group: "base",
         title: "Éxito",

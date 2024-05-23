@@ -1,32 +1,18 @@
 <script setup lang="ts">
 
-import {ref, inject} from 'vue'
-import axios from 'axios'
+import {useAuthStore} from "@/stores/auth.store"
 
+const authStore = useAuthStore()
 
 </script>
 
 <template>
-  <div>
-    <h1>Home</h1>
+  <div class="flex justify-center | mb-5">
+    <h1 class="text-black text-4xl">Bienvenido</h1>
   </div>
-  <table colspsn="10">
-    <thead>
-    <tr>
-      <td>Código departamento</td>
-      <td>Código municipio</td>
-      <td>Departamento</td>
-      <td>Indicativo</td>
-    </tr>
-    <tr>
-    </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
-
-
+  <div class="flex justify-center">
+    <p class="text-2xl">{{ authStore?.user?.name }} {{ authStore?.user?.last_name }}</p>
+  </div>
 </template>
 
 <style scoped>

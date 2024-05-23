@@ -4,14 +4,15 @@ import BaseTextInput from "@/components/private/global/BaseTextInput.vue"
 import DataTable from "@/components/private/global/DataTable.vue"
 import {
   PencilSquareIcon,
-  TrashIcon,
+  EyeIcon,
   ArrowPathIcon
 } from "@heroicons/vue/24/solid"
-import {USERS_LIST} from "@/constants/UsersConstant"
+import {USERS_LIST, USER_URL} from "@/constants/UsersConstant"
 import {inject, onMounted, provide, reactive, ref} from "vue";
 import BaseSelectInput from "@/components/private/global/BaseSelectInput.vue";
 import {DEPARTMENTS_URL} from "@/constants/DepartmensConstant";
 import EditModal from "@/components/private/Users/EditModal.vue";
+import router from "@/router";
 
 const useFetch = inject('useFetchDefault')
 
@@ -207,7 +208,7 @@ const refreshTable = () => {
           <PencilSquareIcon class="w-7" @click="openModal(item)" />
         </a>
         <a class="text-gray-500 text-xl cursor-pointer">
-          <TrashIcon class="w-7" />
+<!--          <EyeIcon class="w-7" @click="getUserById(item.id)"/>-->
         </a>
       </div>
     </template>

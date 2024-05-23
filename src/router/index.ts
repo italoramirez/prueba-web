@@ -8,6 +8,22 @@ const router = createRouter({
   history: createWebHistory(/*import.meta.env.BASE_URL*/),
   routes: [
     {
+      path: '/home',
+      name: 'home',
+      component: () => import('../components/private/Index.vue'),
+      meta: {
+        middleware: [
+          auth
+        ],
+        layout: 'BasicLayout',
+        title: 'Inicio'
+      }
+    },
+    {
+      path: '/',
+      redirect: '/login',
+    },
+    {
       path: '/user/profile',
       name: 'edit',
       component: () => import('../components/private/Users/Profile.vue'),
@@ -16,7 +32,7 @@ const router = createRouter({
           auth
         ],
         layout: 'BasicLayout',
-        title: 'Inicio'
+        title: 'Perfil'
       }
     },
     {

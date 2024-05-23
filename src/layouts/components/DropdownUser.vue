@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {inject, ref} from "vue"
+import {inject, onMounted, ref} from "vue"
 import {useAuthStore} from "@/stores/auth.store"
-
-const useFetch = inject('useFetchDefault')
 import {LOGOUT_URL} from "@/constants/Authconstants"
 import {useRouter} from "vue-router"
-import axios from "axios";
+
+
+const useFetch = inject('useFetchDefault')
 
 
 const router = useRouter()
@@ -42,7 +42,6 @@ const getInitialName = () => {
 const logout = async () => {
   try {
     const { response, data } = await useFetch(LOGOUT_URL).post()
-    console.log(response)
     authStore.logout()
     setTimeout(() => {
       router.push({name: 'login'})

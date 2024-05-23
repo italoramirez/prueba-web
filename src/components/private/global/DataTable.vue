@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import {watch, inject, ref, useSlots} from "vue"
-import {ServerOptions, SortType} from "vue3-easy-data-table"
+import type {ServerOptions, SortType} from "vue3-easy-data-table"
 
 const slots = useSlots()
 

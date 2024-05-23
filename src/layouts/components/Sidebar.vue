@@ -14,13 +14,17 @@ import {
 } from "@heroicons/vue/24/solid"
 import Header from "@/layouts/components/Header.vue"
 import {useAuthStore} from "@/stores/auth.store"
-import Login from "@/components/public/auth/Login.vue";
 
 const authStore = useAuthStore()
 const isOpen = ref(false)
 
 
 const menu = ref([
+  {
+    name: 'Inicio',
+    icon: HomeIcon,
+    route: '/home',
+  },
   {
     name: 'Usuarios',
     icon: UserCircleIcon,

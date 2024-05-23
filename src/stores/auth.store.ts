@@ -3,10 +3,7 @@ import {useLocalStorage} from "@vueuse/core"
 import router from "@/router";
 import { inject } from 'vue'
 
-
-
 const useFetch = inject('useFetchDefault')
-
 
 export const useAuthStore = defineStore('users', {
   state: () => ({
@@ -18,7 +15,7 @@ export const useAuthStore = defineStore('users', {
       try {
         this.setToken(data.value.token);
         this.setUser(data.value.user);
-        await router.push('users')
+        await router.push('home')
       } catch (error) {
         console.error(error);
         throw error;

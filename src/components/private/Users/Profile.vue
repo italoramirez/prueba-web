@@ -13,7 +13,6 @@ const get = async () => {
     const {data, response} = await useFetch(`${USER_URL}/${authStore.user.id}`).json()
     if (response.value?.ok) {
       profile.value = data.value
-      console.log(profile.value)
     }
   } catch (error) {
     console.error(error)

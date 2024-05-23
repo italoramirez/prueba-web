@@ -25,7 +25,7 @@ const submit = async () => {
   try {
     const { response, data } = await useFetch(`${LOGIN_URL}`).post(model).json()
     if (response.value.ok) {
-      authStore.login(data , router)
+      await authStore.login(data, router)
     }
   } catch (error) {
     if (error.response?.status === 404) {
