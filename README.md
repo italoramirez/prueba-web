@@ -42,3 +42,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Configuración .env
+
+```sh
+Se encuentra en la raíz del proyecto el archivo .env.example, se debe copiar y pegar en la misma ubicación con el nombre .env
+```
