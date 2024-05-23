@@ -38,7 +38,7 @@ const items = ref<Object[]>([])
 const total = ref<number>(0)
 const serverOptions = ref<ServerOptions>({
   page: 1,
-  rowsPerPage: 10,
+  rowsPerPage: 5,
 })
 const getDataFromApi = async () => {
   try {

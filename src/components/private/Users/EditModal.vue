@@ -25,6 +25,22 @@ const emit = defineEmits<{
   (event: 'save'): Object
 }>()
 
+
+const close = () => {
+  emit('close')
+}
+
+const {handleSubmit} = useForm({
+  validationSchema: yup.object({
+    // name: yup.string().required(),
+    // last_name: yup.string().required(),
+    // address: yup.string().required(),
+    // email: yup.string().required(),
+    // phone: yup.string().required().matches(/^[0-9]+$/, 'El campo solo puede contener números'),
+    // department_id: yup.number().required(),
+  }),
+})
+
 interface initialState {
   id: null | number;
   name: string;
@@ -43,22 +59,8 @@ const model = reactive<initialState>({
   address: '',
   email: '',
   department_id: null,
-});
-
-const close = () => {
-  emit('close')
-}
-
-const {handleSubmit} = useForm({
-  validationSchema: yup.object({
-    // name: yup.string().required(),
-    // last_name: yup.string().required(),
-    // address: yup.string().required(),
-    // email: yup.string().required(),
-    // department_id: yup.number().required(),
-
-  }),
 })
+
 const onSubmit = handleSubmit(() => {
   save()
 })
@@ -152,7 +154,7 @@ watch(() => userSelected, () => {
             />
           </div>
           <div class="w-full mt-10 flex justify-end">
-            <BaseButton text="Guardar"/>
+            <BaseButton type="submit" text="Guardar"/>
           </div>
         </form>
       </div>

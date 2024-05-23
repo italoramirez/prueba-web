@@ -28,7 +28,7 @@ const menu = ref([
     subMenu: [
       {
         name: 'Listado',
-        route: '/user',
+        route: '/users',
         icon: BookOpenIcon
       },
       {
