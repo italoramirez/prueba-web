@@ -1,4 +1,4 @@
-# platweb-web
+# Prueba-web
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -22,6 +22,10 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
+
+```sh
+node mínimo 18
+```
 
 ```sh
 npm install
